@@ -18,6 +18,35 @@ namespace ICONEXT.Controllers
             _logger = logger;
         }
 
+        public IActionResult login()
+        {
+            return View();
+        }
+
+       
+
+        public IActionResult AddManpower()
+        {
+            return View();
+        }
+
+
+        public IActionResult Holiday()
+        {
+            return View();
+        }
+
+       
+        public IActionResult Leave()
+        {
+            return View();
+        }
+
+        public IActionResult AddLeave()
+        {
+            return View();
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -28,10 +57,27 @@ namespace ICONEXT.Controllers
             return View();
         }
 
+        public IActionResult ViewProject()
+        {
+            return View();
+        }
+
         public IActionResult Manpower()
         {
             return View();
         }
+
+        public IActionResult Team()
+        {
+            return View();
+        }
+
+
+        public IActionResult Organization()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
