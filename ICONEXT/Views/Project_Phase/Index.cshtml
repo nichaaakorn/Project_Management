@@ -1,85 +1,43 @@
-﻿
-@using ICONEXT;
+﻿@using ICONEXT;
 @model IEnumerable<ICONEXT.Models.Project_Phase>
-
-
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 
 @{
     IEnumerable<Project_Phase> displaydata = ViewData["Results"] as IEnumerable<Project_Phase>;
 }
 
 
+    
+   
+    
+    <!--
+    <h1>TEST database</h1>
 
-<div class="row">
-    @foreach (var item in displaydata)
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Tasks</th>
+            <th>Phase</th>
+            <th>StartDate</th>
+            <th>EndDate</th>
+            <th>Usage</th>
 
-    {
+        </tr>
+        @foreach (var item in displaydata)
+        {
+    <tr>
+        <td>@item.Name</td>
+        <td>@item.Tasks</td>
+        <td>@item.Phase</td>
+        <td>@item.FromDate</td>
+        <td>@item.EndDate</td>
+        <td>@item.Usage</td>
 
-        <div class="text-center">
-            <div class="card border-info   " style="width: 18rem; margin:3px;">
+    </tr>
+        }
 
-                <div class="card-body">
-                    @Html.DisplayFor(modelItem => item.Name)
-                </div>
-
-                <div class="text-center">
-                    <div class="btn btn-primary text-center" style="width: 5rem;">
-                        <a asp-action="Overview" asp-route-id="@item.ProjID">Edit</a>
-                    </div>
-                </div>
-                <br>
-                <div>
-                    Start Date :  @Html.DisplayFor(modelItem => item.StartDate)
-                </div>
-
-            </div>
-
-
-
-            <!-------------------------------menu dropdown------------------------------------->
-
-
-            <div class="text-right">
-                <div class="dropdown">
-                    <!--Trigger-->
-                    <a type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-three-dots-vertical" fill="currentColor"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                  d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-                        </svg>
-                    </a>
-                    <!--Menu-->
-                    <div class="dropdown-menu dropdown-primary">
-                        <a class="dropdown-item" asp-action="Edit" asp-route-id="@item.ProjID">Edit</a>
-                        <a class="dropdown-item" asp-action="Details" asp-route-id="@item.ProjID">Details</a>
-                        <a class="dropdown-item" asp-action="Delete" asp-route-id="@item.ProjID">Delete</a>
-
-                    </div>
-
-
-
-                </div>
-            </div> &nbsp;&nbsp;&nbsp;&nbsp;
-
-            <br>
-        </div>
-
-
-    }
-</div>
-
-
-
-<div class="text-center">
-    <a asp-action="Create">
-        <div class="btn btn-success text-center" style="width: 12rem;">
-            Create New Project
-        </div>
-    </a>
-</div>
+    </table>
+        -->

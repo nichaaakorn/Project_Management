@@ -27,12 +27,22 @@ namespace ICONEXT.Controllers
           return View(await _context.project.ToListAsync());
         }
 
-
-
+        
+      
         public IActionResult ViewProject()
         {
             return View();
         }
+
+
+       
+
+
+        public IActionResult Overview()
+        {
+            return View();
+        }
+
 
 
 
@@ -96,6 +106,20 @@ namespace ICONEXT.Controllers
             return View(project);
         }
 
+        /*[HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ViewProject([Bind("TID,Tasks")] project TaskProject)
+        {
+            
+            if (ModelState.IsValid)
+            {
+                _context.Add(TaskProject);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(ViewProject));
+            }
+            return View(TaskProject);
+        }
+        */
    
         // POST: projects/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 

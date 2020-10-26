@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data;
 using Microsoft.Data.SqlClient;
 using ICONEXT.Models;
+
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ICONEXT.Data;
@@ -16,10 +17,12 @@ using Microsoft.AspNetCore.Builder;
 
 
 
+
 namespace ICONEXT.Controllers
 {
     public class Project_PhaseController : Controller
     {
+
         private readonly ICONEXTContext _context;
 
         public Project_PhaseController(ICONEXTContext context)
@@ -27,11 +30,13 @@ namespace ICONEXT.Controllers
             _context = context;
         }
 
+
         public IActionResult Index()
         {
             ViewData["Results"] = TablesColumnsDisplay();
             return View();
         }
+
 
         public IActionResult ViewProject()
         {
@@ -41,7 +46,7 @@ namespace ICONEXT.Controllers
 
 
         [HttpPost]
-        
+
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ViewProject([Bind("Tasks,Phase,FromDate,EndDate,Usage")] Project_Phase Project_Phase)
         {
@@ -53,7 +58,8 @@ namespace ICONEXT.Controllers
             }
             return View(Project_Phase);
         }
-        
+
+
 
 
 
@@ -79,10 +85,10 @@ namespace ICONEXT.Controllers
                         {
                             Project_Phase PPOBJ = new Project_Phase();
                             PPOBJ.Name = SDR["Name"].ToString();
+                            PPOBJ.Tasks = SDR["Tasks"].ToString();
                             PPOBJ.Partner = SDR["Partner"].ToString();
                             PPOBJ.Customer = SDR["Customer"].ToString();
                             PPOBJ.StartDate = SDR["StartDate"].ToString();
-                            PPOBJ.Tasks = SDR["Tasks"].ToString();
                             PPOBJ.Phase = SDR["Phase"].ToString();
                             PPOBJ.FromDate = SDR["FromDate"].ToString();
                             PPOBJ.EndDate = SDR["EndDate"].ToString();
@@ -98,4 +104,3 @@ namespace ICONEXT.Controllers
         }
     }
 }
-

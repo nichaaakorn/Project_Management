@@ -7,6 +7,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 @{
     IEnumerable<Project_Phase> displaydata = ViewData["Results"] as IEnumerable<Project_Phase>;
 }
@@ -14,13 +15,14 @@
 @using (Html.BeginForm("ViewProject", "Project_Phase", FormMethod.Post, new { @class = "ui large form" }))
 {
 
-
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <!------ Include the above in your HEAD tag ---------->
 
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+
 
 
     <form asp-action="ViewProject">
@@ -33,7 +35,6 @@
                             Add Tasks
                         </a>
                         &nbsp;
-
                         <button id="save" class="btn btn-primary ">
                             <span class="glyphicon glyphicon-ok"></span>
                             Save Changes
@@ -54,10 +55,10 @@
                                 </th>
 
                                 <th class="text-center">
-                                    Start Date
+                                    StartDate
                                 </th>
                                 <th class="text-center">
-                                    End Date
+                                    Enddate
                                 </th>
                                 <th class="text-center">
                                     Manpower
@@ -120,9 +121,6 @@
                 </div>
             </div>
         </div>
-
-
-
     </form>
 
     <script>
@@ -231,4 +229,5 @@
         })
 
     </script>
+
 }
