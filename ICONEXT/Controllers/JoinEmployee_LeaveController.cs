@@ -33,10 +33,10 @@ namespace ICONEXT.Controllers
 
 
         public IActionResult Details()
-      {
+        {
             ViewData["Results"] = TablesColumnsDisplay();
             return View();
-      }
+        }
 
 
         [HttpPost]
@@ -56,7 +56,6 @@ namespace ICONEXT.Controllers
 
 
 
-
         public static List<JoinEmployee_Leave> TablesColumnsDisplay()
         {
             List<JoinEmployee_Leave> EL = new List<JoinEmployee_Leave>();
@@ -64,7 +63,7 @@ namespace ICONEXT.Controllers
 
             using (SqlConnection sqlconn = new SqlConnection(connection))
             {
-                using (SqlCommand sqlcomm = new SqlCommand("select employee.ID,employee.Title,employee.Name,employee.Surname,employee.Nickname,employee.Position,employee.Tel,employee.Email,employee.Active, Leave.StartDate,Leave.EndDate,Leave.note,Leave.Days from employee full join Leave on employee.ID=Leave.ID"))
+                using (SqlCommand sqlcomm = new SqlCommand("select employee.Title,employee.Name,employee.Surname,employee.Nickname,employee.Position,employee.Tel,employee.Email,employee.Active, Leave.StartDate,Leave.EndDate,Leave.note,Leave.Days from employee full join Leave on employee.ID=Leave.ID"))
                 {
                     using (SqlDataAdapter SDA = new SqlDataAdapter())
                     {
@@ -76,7 +75,6 @@ namespace ICONEXT.Controllers
                         while (SDR.Read())
                         {
                             JoinEmployee_Leave ELOBJ = new JoinEmployee_Leave();
-                            ELOBJ.ID = SDR["ID"].ToString();
                             ELOBJ.Title = SDR["Title"].ToString();
                             ELOBJ.Name = SDR["Name"].ToString();
                             ELOBJ.Surname = SDR["Surname"].ToString();
@@ -97,8 +95,6 @@ namespace ICONEXT.Controllers
                 }
             }
         }
-
-        
 
     }
 }
