@@ -1,0 +1,72 @@
+﻿@model ICONEXT.Models.Leave
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Add</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="LID" class="control-label"></label>
+                <input asp-for="LID" autocomplete="off" class="form-control" />
+                <span asp-validation-for="LID" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group row">
+                <label asp-for="StartDate" for="example-date-input" class="col-4 col-form-label">Start Date</label>
+                <div class="col-10">
+                    <input asp-for="StartDate" class="form-control" type="date" id="example-date-input">
+                </div>
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group row">
+                <label asp-for="EndDate" for="example-date-input" class="col-4 col-form-label">End Date</label>
+                <div class="col-10">
+                    <input asp-for="EndDate" class="form-control" type="date" id="example-date-input">
+                </div>
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="note" class="control-label"></label>
+                <input asp-for="note" autocomplete="off" class="form-control" />
+                <span asp-validation-for="note" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Days" class="control-label"></label>
+                <input asp-for="Days" autocomplete="off" class="form-control" />
+                <span asp-validation-for="Days" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Confrim" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
+
+       

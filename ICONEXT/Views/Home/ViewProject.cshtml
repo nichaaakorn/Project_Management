@@ -1,0 +1,288 @@
+﻿@{
+    ViewData["Title"] = "ViewProject";
+    <link rel="stylesheet" href="~/css/login.css">
+    <script>
+        $('#exampleModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var recipient = button.data('whatever') // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            modal.find('.modal-title').text(recipient)
+            modal.find('.modal-body input').val(recipient)
+        })
+    </script>
+}
+
+<div class="icon-bar">
+
+
+    <div class="title-project">Project ABC</div><br>
+
+
+    <table class="table" style="text-align:center ">
+        <thead>
+            <tr>
+                <th class="text">Tasks</th>
+                <th class="text">Phase</th>
+                <th class="text">Duration</th>
+                <th class="text">From</th>
+                <th class="text">To</th>
+                <th class="text">Manpower</th>
+                <th class="text">Role</th>
+                <th class="text">Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+               
+
+                <td>
+                    <div class="row">
+                        <div>
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" />
+                            </svg>
+                            
+                        </div>
+                        <div>
+                            <input type="text" id="text" style="width:120px;" name="">
+                        </div>
+                    </div>
+                </td>
+
+                <td></td>
+
+                <td>
+                    <input type="text" id="text" style="width:80px;" name="">
+                </td>
+
+                <td>
+                    <input type="text" id="text" style="width:80px;" name="">
+                </td>
+
+                <td>
+                    <input type="text" id="text" style="width:80px;" name="">
+                </td>
+
+                <!----------------------------------------------------------------------------------------------->
+
+                <td></td>
+                <td></td>
+
+               
+                <td>
+                    <div class="row">
+                        <div>
+                            <input type="text" id="text" style="width:80px;" name="">
+                        </div>
+
+                        <div class="text-center">
+                            <div class="dropdown">
+                                <!--Trigger-->
+                                <a type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-three-dots-vertical" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                              d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                    </svg>
+                                </a>
+                                <!--Menu-->
+                                <div class="dropdown-menu dropdown-primary">
+                                    <a class="dropdown-item" href="#"><i class="fab fa-apple-pay"></i>&nbsp;&nbsp;Edit</a>
+                                    <a class="dropdown-item" href="#"><i class="fab fa-apple-pay"></i>&nbsp;&nbsp;Add task</a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-bell-slash"></i>&nbsp;&nbsp;Add Phase</a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-bell-slash"></i>&nbsp;&nbsp;Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Scope</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row text-center">
+                                            <div class="col-6">
+                                                <div class=""><h4>Start</h4></div>
+                                                <div class=""><h5>12/08/2020</h5></div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class=""><h4>Finish</h4></div>
+                                                <div class=""><h5>10/09/2020</h5></div>
+                                            </div><br><br>
+                                            <div class="col-6">
+                                                <div class=""><h4>Duration</h4></div>
+                                                <div class=""><h5>29 Days 0 hour</h5></div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class=""><h4>OverTime</h4></div>
+                                                <div class=""><h5>0 Days 0 hour</h5></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center m-3">
+                                        <button type="button" class="btn btn-primary">Done</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </td>
+
+
+            </tr>
+            <!----------------------------------------------------------------------------------------------->
+
+            <tr class="collapse" id="collapseExample">
+               
+
+                <td>
+                </td>
+
+                <td>
+                    <input type="text" id="text" style="width:120px;" name="">
+                </td>
+
+                <td>
+                    <input type="text" id="text" style="width:80px;" name="">
+                </td>
+
+                <td>
+                    <input type="text" id="text" style="width:80px;" name="">
+                </td>
+
+                <td>
+                    <input type="text" id="text" style="width:80px;" name="">
+                </td>
+                <td>
+
+                    <form class="form-select" float: right; >
+                        <input class="form-Role mr-sm-2" style="width:70px; type="search" placeholder="Search role" aria-label="Search">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                        </svg>
+                    </form>
+
+                </td>
+                <td>
+
+                    <form class="form-select" float: right; >
+                        <input class="form-Role mr-sm-2" style="width:70px; type="search" placeholder="Search role" aria-label="Search">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                        </svg>
+                    </form>
+
+                    
+                </td>
+                
+                <td>
+                    <div class="row">
+                        <div>
+                            <input type="text" id="text" style="width:80px;" name="">
+                        </div>
+
+                        <div class="text-center">
+                            <div class="dropdown">
+                                <!--Trigger-->
+                                <a type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-three-dots-vertical" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                              d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                    </svg>
+                                </a>
+                                <!--Menu-->
+                                <div class="dropdown-menu dropdown-primary">
+                                    <a class="dropdown-item" href="#"><i class="fas fa-bell-slash"></i>&nbsp;&nbsp;Edit</a>
+                                    <a class="dropdown-item" href="#"><i class="fab fa-apple-pay"></i>&nbsp;&nbsp;Add task</a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-bell-slash"></i>&nbsp;&nbsp;Add Phase</a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-bell-slash"></i>&nbsp;&nbsp;Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Scope</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row text-center">
+                                            <div class="col-6">
+                                                <div class=""><h4>Start</h4></div>
+                                                <div class=""><h5>12/08/2020</h5></div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class=""><h4>Finish</h4></div>
+                                                <div class=""><h5>10/09/2020</h5></div>
+                                            </div><br><br>
+                                            <div class="col-6">
+                                                <div class=""><h4>Duration</h4></div>
+                                                <div class=""><h5>29 Days 0 hour</h5></div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class=""><h4>OverTime</h4></div>
+                                                <div class=""><h5>0 Days 0 hour</h5></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center m-3">
+                                        <button type="button" class="btn btn-primary">Done</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+
+            </tr>
+
+        </tbody>
+
+
+    </table>
+
+    <div class="cart">
+
+        <div>
+
+
+
+
+
+        </div><br>
+
+    </div>
+
+
+    <div class="btn-task">
+        &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        <input class="btn btn-activity" type="submit" value="Add Phase">&nbsp;&nbsp;
+        <input class="btn btn-Addtask" type="reset" value="Add Task">
+
+    </div>
+
+
+
+
+
+
+
+</div>
+
+

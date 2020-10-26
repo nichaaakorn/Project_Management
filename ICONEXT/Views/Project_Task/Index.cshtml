@@ -1,0 +1,31 @@
+﻿@using ICONEXT;
+@model ICONEXT.Models.Project_Task
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    IEnumerable<Project_Task> displaydata = ViewData["Results"] as IEnumerable<Project_Task>;
+}
+
+
+
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Tasks</th>
+        
+    </tr>
+    @foreach(var item in displaydata)
+    {
+<tr>
+    <td>@item.Name</td>
+    <td>@item.Tasks</td>
+    
+</tr>
+    }
+
+</table>
+   

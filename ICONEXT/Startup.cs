@@ -8,15 +8,21 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ICONEXT.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ICONEXT
 {
     public class Startup
     {
+
+        
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
+
 
         public IConfiguration Configuration { get; }
 
@@ -24,7 +30,13 @@ namespace ICONEXT
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<ICONEXTContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ICONEXTContext")));
+
+            // Add the Kendo UI services to the services container.
+           
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -52,6 +64,11 @@ namespace ICONEXT
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+
+
         }
+
+
     }
 }
